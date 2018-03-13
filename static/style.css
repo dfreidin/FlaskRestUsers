@@ -1,0 +1,10 @@
+* {
+    text-align: center;
+}
+td, th {
+    border: solid black thin;
+    padding: 5px;
+}
+.error {
+    color: red;
+}

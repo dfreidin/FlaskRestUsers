@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='{{url_for("static", filename="style.css")}}'>
+        <title>Users Show</title>
+    </head>
+    <body>
+        <h1>User {{user['id']}}</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <p class="error">{{messages[0]}}</p>
+            {% endif %}
+        {% endwith %}
+        <p>Full Name: {{user['name']}}</p>
+        <p>Email: {{user['email']}}</p>
+        <p>Created at: {{user['created']}}</p>
+        <p><a href="/users/{{user['id']}}/edit">Edit</a> | <a href="/users/{{user['id']}}/destroy">Delete</a> | <a href="/users">Go Back</a></p>
+    </body>
+</html>
